@@ -82,8 +82,8 @@ public class DiasLLuvia {
         int dia=-1;
         for(int i=1; i<=12; i++){
             for(int j=1; j<=31; j++){
-                if(this.calendarioLluvia [i] [j]){
-                    dia=i*j;
+                if(dia==-1&&this.calendarioLluvia [i] [j]){
+                    dia=j+(31*(i-1));
                 }
             }
         }

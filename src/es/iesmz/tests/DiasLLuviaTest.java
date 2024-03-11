@@ -195,5 +195,55 @@ class DiasLLuviaTest {
 
     @org.junit.jupiter.api.Test
     void primerDiaLluvia() {
+        DiasLLuvia l = new DiasLLuvia();
+        //ARRANGE
+        l.registroDia(2, 1, true);
+        l.registroDia(20, 1, true);
+        l.registroDia(18, 4, true);
+        l.registroDia(6, 5, true);
+        l.registroDia(10, 5, true);
+        l.registroDia(1, 7, true);
+        l.registroDia(12, 7, true);
+        l.registroDia(25, 8, true);
+        l.registroDia(20, 8, true);
+        l.registroDia(12, 9, true);
+        l.registroDia(1, 10, true);
+        //ACT
+        int primerDia = l.primerDiaLluvia();
+        //ASSERT
+        assertEquals(2,primerDia);
     }
+
+    @org.junit.jupiter.api.Test
+    void primerDiaLluvia2() {
+        DiasLLuvia l = new DiasLLuvia();
+        //ARRANGE
+        l.registroDia(4, 3, true);
+        l.registroDia(6, 5, true);
+        l.registroDia(12, 7, true);
+        l.registroDia(25, 8, true);
+        l.registroDia(20, 8, true);
+        l.registroDia(12, 9, true);
+        l.registroDia(1, 10, true);
+        //ACT
+        int primerDia = l.primerDiaLluvia();
+        //ASSERT
+        assertEquals(66,primerDia);
+    }
+
+    @org.junit.jupiter.api.Test
+    void primerDiaLluvia3() {
+        DiasLLuvia l = new DiasLLuvia();
+        //ARRANGE
+        l.registroDia(15, 6, true);
+        l.registroDia(25, 8, true);
+        l.registroDia(20, 8, true);
+        l.registroDia(12, 9, true);
+        l.registroDia(1, 10, true);
+        //ACT
+        int primerDia = l.primerDiaLluvia();
+        //ASSERT
+        assertNotEquals(96,primerDia);
+    }
+
 }
