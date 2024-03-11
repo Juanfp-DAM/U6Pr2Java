@@ -32,8 +32,7 @@ public class DiasLLuvia {
     public int contarDiasLluviosos(){
         int nDiasLlueve=0;
         for(int i=0; i<12; i++){
-            //tamaño total dias 12*31=372
-            for(int j=0; j<372; j++){
+            for(int j=0; j<31; j++){
                 if(this.calendarioLluvia [i] [j]){
                     nDiasLlueve++;
                 }
@@ -42,6 +41,41 @@ public class DiasLLuvia {
         return nDiasLlueve;
     }
 
+
+    public int trimestreLluvioso(){
+        int trim1=0, trim2=0, trim3=0, trim4=0;
+        for(int i=0; i<12; i++){
+            for(int j=0; j<31; j++){
+                if(i<3){
+                    if(this.calendarioLluvia [i] [j]) {
+                        trim1++;
+                    }
+                }else if(i>=3&&i<6){
+                    if(this.calendarioLluvia [i] [j]) {
+                        trim2++;
+                    }
+                }else if(i>=6&&i<9){
+                    if(this.calendarioLluvia [i] [j]) {
+                        trim3++;
+                    }
+                }else{
+                    if(this.calendarioLluvia [i] [j]) {
+                        trim4++;
+                    }
+                }
+            }
+        }
+        if(trim1>trim2 && trim1>trim3 && trim1>trim4){
+            return 1;
+        }
+        if(trim2>trim1 && trim2>trim3 && trim2>trim4){
+            return 2;
+        }
+        if(trim3>trim1 && trim3>trim2 && trim3>trim4){
+            return 3;
+        }
+        return 4;
+    }
 
 
 
