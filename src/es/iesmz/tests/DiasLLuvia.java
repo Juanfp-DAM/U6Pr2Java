@@ -2,9 +2,7 @@ package es.iesmz.tests;
 
 public class DiasLLuvia {
 
-    private boolean calendario[][]=new boolean[12][31];
-
-
+    private boolean calendarioLluvia[][]=new boolean[12][31];
 
     public boolean registroDia(int dia, int mes, boolean lluvia){
         //Comprueba el día es correcto
@@ -12,9 +10,9 @@ public class DiasLLuvia {
             //Comprueba el mes es correcto
             if(mes>0 && mes<13){
                 if(lluvia){
-                    this.calendario [mes] [dia]=true;
+                    this.calendarioLluvia [mes] [dia]=true;
                 }else{
-                    this.calendario[mes][dia]=false;
+                    this.calendarioLluvia[mes][dia]=false;
                 }
                 return true;
             }else{
@@ -26,4 +24,12 @@ public class DiasLLuvia {
             return false;
         }
     }
+
+    public boolean consultarDia(int dia, int mes) {
+        return this.calendarioLluvia[mes][dia];
+    }
+
+
+
+
 }
