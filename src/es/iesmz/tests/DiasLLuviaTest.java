@@ -7,8 +7,8 @@ class DiasLLuviaTest {
     void registroDia1() {
         // Arrange
         DiasLLuvia l=new DiasLLuvia();
-        int dia=03;
-        int mes=04;
+        int dia=10;
+        int mes=12;
         boolean lluvia=true;
         //ACT
         boolean registro=l.registroDia(dia,mes,lluvia);
@@ -33,7 +33,7 @@ class DiasLLuviaTest {
     void registroDia3() {
         // Arrange
         DiasLLuvia l=new DiasLLuvia();
-        int dia=18;
+        int dia=15;
         int mes=13;
         boolean lluvia=false;
         //ACT
@@ -80,7 +80,7 @@ class DiasLLuviaTest {
         //ARRANGE
         DiasLLuvia l0=new DiasLLuvia();
         int dia=15;
-        int mes=11;
+        int mes=12;
         boolean lluvia=false;
         l0.registroDia(dia,mes,lluvia);
 
@@ -93,6 +93,43 @@ class DiasLLuviaTest {
 
     @org.junit.jupiter.api.Test
     void contarDiasLluviosos() {
+        DiasLLuvia l =new DiasLLuvia();
+        l.registroDia(1,12,true);
+        l.registroDia(2,2,true);
+        l.registroDia(3,2, false);
+        l.registroDia(1,1,true);
+
+        int comprueba=l.contarDiasLluviosos();
+
+        assertEquals(3,comprueba);
+    }
+    @org.junit.jupiter.api.Test
+    void contarDiasLluviosos2() {
+        DiasLLuvia l =new DiasLLuvia();
+        l.registroDia(5,7,false);
+        l.registroDia(2,2,true);
+        l.registroDia(4,4, true);
+        l.registroDia(11,5,true);
+        l.registroDia(17,12,true);
+
+        int comprueba=l.contarDiasLluviosos();
+
+        assertEquals(4,comprueba);
+    }
+
+    @org.junit.jupiter.api.Test
+    void contarDiasLluviosos3() {
+        //ARRANGE
+        DiasLLuvia l =new DiasLLuvia();
+        l.registroDia(5,7,false);
+        l.registroDia(2,2,true);
+        l.registroDia(4,4, true);
+        l.registroDia(11,5,true);
+        l.registroDia(17,12,true);
+        //ACT
+        int comprueba=l.contarDiasLluviosos();
+        //ASSERT
+        assertNotEquals(2,comprueba);
     }
 
     @org.junit.jupiter.api.Test

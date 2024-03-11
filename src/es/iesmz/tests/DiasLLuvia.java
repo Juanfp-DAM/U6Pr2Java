@@ -2,7 +2,7 @@ package es.iesmz.tests;
 
 public class DiasLLuvia {
 
-    private boolean calendarioLluvia[][]=new boolean[12][31];
+    private boolean calendarioLluvia[][]=new boolean[13][32];
 
     public boolean registroDia(int dia, int mes, boolean lluvia){
         //Comprueba el día es correcto
@@ -31,8 +31,8 @@ public class DiasLLuvia {
 
     public int contarDiasLluviosos(){
         int nDiasLlueve=0;
-        for(int i=0; i<12; i++){
-            for(int j=0; j<31; j++){
+        for(int i=1; i<=12; i++){
+            for(int j=1; j<=31; j++){
                 if(this.calendarioLluvia [i] [j]){
                     nDiasLlueve++;
                 }
@@ -44,8 +44,8 @@ public class DiasLLuvia {
 
     public int trimestreLluvioso(){
         int trim1=0, trim2=0, trim3=0, trim4=0;
-        for(int i=0; i<12; i++){
-            for(int j=0; j<31; j++){
+        for(int i=1; i<=12; i++){
+            for(int j=1; j<=31; j++){
                 if(i<3){
                     if(this.calendarioLluvia [i] [j]) {
                         trim1++;
@@ -80,8 +80,8 @@ public class DiasLLuvia {
 
     public int primerDiaLluvia(){
         int dia=-1;
-        for(int i=0; i<12; i++){
-            for(int j=0; j<31; j++){
+        for(int i=1; i<=12; i++){
+            for(int j=1; j<=31; j++){
                 if(this.calendarioLluvia [i] [j]){
                     dia=i*j;
                 }
