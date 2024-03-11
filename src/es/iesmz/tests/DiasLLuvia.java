@@ -29,6 +29,19 @@ public class DiasLLuvia {
         return this.calendarioLluvia[mes][dia];
     }
 
+    public int contarDiasLluviosos(){
+        int nDiasLlueve=0;
+        for(int i=0; i<12; i++){
+            //tamaño total dias 12*31=372
+            for(int j=0; j<372; j++){
+                if(this.calendarioLluvia [i] [j]){
+                    nDiasLlueve++;
+                }
+            }
+        }
+        return nDiasLlueve;
+    }
+
 
 
 
