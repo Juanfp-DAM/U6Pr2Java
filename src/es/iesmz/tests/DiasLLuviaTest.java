@@ -46,7 +46,49 @@ class DiasLLuviaTest {
 
 
     @org.junit.jupiter.api.Test
-    void consultarDia() {
+    void consultarDia1() {
+        //ARRANGE
+        DiasLLuvia ll=new DiasLLuvia();
+        int dia=12;
+        int mes=3;
+        boolean lluvia=true;
+        ll.registroDia(dia,mes,lluvia);
+
+        //ACT
+        boolean comprueba=ll.consultarDia(dia,mes);
+
+        //ASSERT
+        assertTrue(comprueba);
+    }
+    @org.junit.jupiter.api.Test
+    void consultarDia2() {
+        //ARRANGE
+        DiasLLuvia ll=new DiasLLuvia();
+        int dia=05;
+        int mes=10;
+        boolean lluvia=true;
+        ll.registroDia(dia,mes,lluvia);
+
+        //ACT
+        boolean comprueba=ll.consultarDia(dia,mes);
+
+        //ASSERT
+        assertTrue(comprueba);
+    }
+    @org.junit.jupiter.api.Test
+    void consultarDia3() {
+        //ARRANGE
+        DiasLLuvia l0=new DiasLLuvia();
+        int dia=15;
+        int mes=11;
+        boolean lluvia=false;
+        l0.registroDia(dia,mes,lluvia);
+
+        //ACT
+        boolean comprueba=l0.consultarDia(dia,mes);
+
+        //ASSERT
+        assertFalse(comprueba);
     }
 
     @org.junit.jupiter.api.Test
