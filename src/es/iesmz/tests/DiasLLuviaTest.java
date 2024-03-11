@@ -134,6 +134,63 @@ class DiasLLuviaTest {
 
     @org.junit.jupiter.api.Test
     void trimestreLluvioso() {
+        // Arrange
+        DiasLLuvia l = new DiasLLuvia();
+        l.registroDia(1, 1, true);
+        l.registroDia(2, 1, true);
+        l.registroDia(1, 2, true);
+        l.registroDia(1, 5, true);
+        l.registroDia(1, 6, true);
+        l.registroDia(1, 7, true);
+        l.registroDia(1, 10, true);
+        // Act
+        int resultado = l.trimestreLluvioso();
+
+        // Assert
+        assertEquals(1, resultado);
+    }
+
+    @org.junit.jupiter.api.Test
+    void trimestreLluvioso2() {
+        // Arrange
+        DiasLLuvia l = new DiasLLuvia();
+        l.registroDia(2, 1, true);
+        l.registroDia(20, 1, true);
+        l.registroDia(18, 4, true);
+        l.registroDia(6, 5, true);
+        l.registroDia(10, 5, true);
+        l.registroDia(1, 7, true);
+        l.registroDia(12, 7, true);
+        l.registroDia(25, 8, true);
+        l.registroDia(20, 8, true);
+        l.registroDia(12, 9, true);
+        l.registroDia(1, 10, true);
+        // Act
+        int resultado = l.trimestreLluvioso();
+
+        // Assert
+        assertEquals(3, resultado);
+    }
+
+    @org.junit.jupiter.api.Test
+    void trimestreLluvioso3() {
+        // Arrange
+        DiasLLuvia l = new DiasLLuvia();
+        // Simular días lluviosos en diferentes trimestres
+        l.registroDia(2, 1, true);
+        l.registroDia(20, 1, true);
+        l.registroDia(18, 4, true);
+        l.registroDia(6, 5, true);
+        l.registroDia(10, 5, true);
+        l.registroDia(1, 7, true);
+        l.registroDia(12, 7, true);
+        l.registroDia(25, 8, true);
+        l.registroDia(1, 10, true);
+        // Act
+        int resultado = l.trimestreLluvioso();
+
+        // Assert
+        assertNotEquals(3, resultado);
     }
 
     @org.junit.jupiter.api.Test
